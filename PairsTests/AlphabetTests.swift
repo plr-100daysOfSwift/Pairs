@@ -10,24 +10,32 @@ import XCTest
 
 class AlphabetTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+	var storyboard: UIStoryboard!
+	var sut: ViewController!
+	var greek: Alphabet!
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+	override func setUpWithError() throws {
+		storyboard = UIStoryboard(name: "Main", bundle: nil)
+		sut = storyboard.instantiateViewController(identifier: "ViewController") as ViewController
+		greek = sut.greek
+	}
 
-    func testAlphabet_WhenNameIsAlpha_UppercaseIsΑ() throws {
-			// Arrange
-			let storyboard = UIStoryboard(name: "Main", bundle: nil)
-			let sut = storyboard.instantiateViewController(identifier: "ViewController") as ViewController
+	override func tearDownWithError() throws {
+		storyboard = nil
+		sut = nil
+		greek = nil
+	}
 
-			// Act
-			if let alpha = sut.greek["alpha"] {
-				// Assert
-				XCTAssertTrue(alpha.upper == "Α", "Expected Α but found \(alpha.upper)")
-			}
+	func testAlphabet_WhenNameIsAlpha_UppercaseIsΑ() throws {
+		// Act
+		if let alpha = greek["alpha"] {
+			// Assert
+			XCTAssertTrue(alpha.upper == "Α", "Expected Α but found \(alpha.upper)")
+		} else {
+			// TODO: handle element not found
+		}
+
+	}
 
 		}
 
