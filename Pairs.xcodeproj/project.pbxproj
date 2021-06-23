@@ -15,6 +15,7 @@
 		DA27C0972683EC1900E1F90A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA27C0952683EC1900E1F90A /* LaunchScreen.storyboard */; };
 		DA27C0A22683EC1900E1F90A /* PairsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA27C0A12683EC1900E1F90A /* PairsTests.swift */; };
 		DA27C0AD2683EC1900E1F90A /* PairsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA27C0AC2683EC1900E1F90A /* PairsUITests.swift */; };
+		DA27C0BB2683EC3300E1F90A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DA27C0BA2683EC3300E1F90A /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		DA27C0A82683EC1900E1F90A /* PairsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PairsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA27C0AC2683EC1900E1F90A /* PairsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsUITests.swift; sourceTree = "<group>"; };
 		DA27C0AE2683EC1900E1F90A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA27C0BA2683EC3300E1F90A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		DA27C07E2683EC1500E1F90A = {
 			isa = PBXGroup;
 			children = (
+				DA27C0BA2683EC3300E1F90A /* README.md */,
 				DA27C0892683EC1500E1F90A /* Pairs */,
 				DA27C0A02683EC1900E1F90A /* PairsTests */,
 				DA27C0AB2683EC1900E1F90A /* PairsUITests */,
@@ -233,6 +236,7 @@
 			files = (
 				DA27C0972683EC1900E1F90A /* LaunchScreen.storyboard in Resources */,
 				DA27C0942683EC1900E1F90A /* Assets.xcassets in Resources */,
+				DA27C0BB2683EC3300E1F90A /* README.md in Resources */,
 				DA27C0922683EC1500E1F90A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,6 +443,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UC6H82UP9B;
 				INFOPLIST_FILE = Pairs/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -446,7 +451,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.plrichardson.Pairs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -458,6 +463,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UC6H82UP9B;
 				INFOPLIST_FILE = Pairs/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -465,7 +471,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.plrichardson.Pairs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
