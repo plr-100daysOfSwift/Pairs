@@ -37,6 +37,15 @@ class AlphabetTests: XCTestCase {
 
 	}
 
+	func testAlphabet_WhenNameIsAlpha_LowercaseIsα() throws {
+		// Act
+		if let alpha = greek["alpha"] {
+			// Assert
+			XCTAssertTrue(alpha.lower == "α", "Expected α but found \(alpha.lower)")
+		} else {
+			// TODO: handle element not found
 		}
+
+	}
 
 }
