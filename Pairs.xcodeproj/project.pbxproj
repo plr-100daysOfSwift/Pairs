@@ -13,9 +13,9 @@
 		DA27C0922683EC1500E1F90A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA27C0902683EC1500E1F90A /* Main.storyboard */; };
 		DA27C0942683EC1900E1F90A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA27C0932683EC1900E1F90A /* Assets.xcassets */; };
 		DA27C0972683EC1900E1F90A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA27C0952683EC1900E1F90A /* LaunchScreen.storyboard */; };
-		DA27C0A22683EC1900E1F90A /* PairsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA27C0A12683EC1900E1F90A /* PairsTests.swift */; };
 		DA27C0AD2683EC1900E1F90A /* PairsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA27C0AC2683EC1900E1F90A /* PairsUITests.swift */; };
 		DA27C0BB2683EC3300E1F90A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DA27C0BA2683EC3300E1F90A /* README.md */; };
+		DAD70DFC2683F65B00915F19 /* AlphabetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD70DFB2683F65B00915F19 /* AlphabetTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,12 +45,12 @@
 		DA27C0962683EC1900E1F90A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA27C0982683EC1900E1F90A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA27C09D2683EC1900E1F90A /* PairsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PairsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA27C0A12683EC1900E1F90A /* PairsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsTests.swift; sourceTree = "<group>"; };
 		DA27C0A32683EC1900E1F90A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA27C0A82683EC1900E1F90A /* PairsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PairsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA27C0AC2683EC1900E1F90A /* PairsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsUITests.swift; sourceTree = "<group>"; };
 		DA27C0AE2683EC1900E1F90A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA27C0BA2683EC3300E1F90A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		DAD70DFB2683F65B00915F19 /* AlphabetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,8 +116,8 @@
 		DA27C0A02683EC1900E1F90A /* PairsTests */ = {
 			isa = PBXGroup;
 			children = (
-				DA27C0A12683EC1900E1F90A /* PairsTests.swift */,
 				DA27C0A32683EC1900E1F90A /* Info.plist */,
+				DAD70DFB2683F65B00915F19 /* AlphabetTests.swift */,
 			);
 			path = PairsTests;
 			sourceTree = "<group>";
@@ -201,6 +201,7 @@
 					};
 					DA27C09C2683EC1900E1F90A = {
 						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
 						TestTargetID = DA27C0862683EC1500E1F90A;
 					};
 					DA27C0A72683EC1900E1F90A = {
@@ -272,7 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA27C0A22683EC1900E1F90A /* PairsTests.swift in Sources */,
+				DAD70DFC2683F65B00915F19 /* AlphabetTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +481,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UC6H82UP9B;
 				INFOPLIST_FILE = PairsTests/Info.plist;
@@ -491,6 +493,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.plrichardson.PairsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pairs.app/Pairs";
@@ -502,6 +505,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UC6H82UP9B;
 				INFOPLIST_FILE = PairsTests/Info.plist;
