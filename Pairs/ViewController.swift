@@ -7,6 +7,8 @@
 
 import UIKit
 
+typealias Alphabet = [String: (upper: Character, lower: Character)]
+
 class ViewController: UIViewController {
 
 	override func viewDidLoad() {
