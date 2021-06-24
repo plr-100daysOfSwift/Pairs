@@ -48,4 +48,19 @@ class GameTests: XCTestCase {
 		}
 	}
 
+	func testGame_UpperUpper_IsPairReturnsFalse() {
+		// Arrange
+		if let letterA = alphabet.randomElement(),
+			 let letterB = alphabet.filter({ $0.key != letterA.key }).randomElement() {
+			let upperA = letterA.value.upper
+			let upperB = letterB.value.upper
+
+			// Act
+			let result = sut.isPair(upperA, upperB)
+
+			// Assert
+			XCTAssertFalse(result, "isPair should return FALSE for the pair (\(letterA), \(letterB)) but returned TRUE")
+		}
+	}
+
 }
