@@ -35,7 +35,7 @@ class GameTests: XCTestCase {
 		XCTAssertTrue(pairsCount == expectedLength, "Length of pairs should be \(expectedLength), but is \(pairsCount)" )
 	}
 
-	func testGame_LetterUpperLower_IsPairReturnsTrue() {
+	func testGame_IsPairLetterUpperLower_ReturnsTrue() {
 		// Arrange
 		if let letter = alphabet.randomElement()?.value {
 			let upper = letter.upper
@@ -48,7 +48,7 @@ class GameTests: XCTestCase {
 		}
 	}
 
-	func testGame_UpperUpper_IsPairReturnsFalse() {
+	func testGame_IsPairUpperUpper_ReturnsFalse() {
 		// Arrange
 		if let letterA = alphabet.randomElement(),
 			 let letterB = alphabet.filter({ $0.key != letterA.key }).randomElement() {
@@ -63,7 +63,7 @@ class GameTests: XCTestCase {
 		}
 	}
 
-	func testGame_LowerLower_IsPairReturnsFalse() {
+	func testGame_IsPairLowerLower_ReturnsFalse() {
 		// Arrange
 		if let letterA = alphabet.randomElement(),
 			 let letterB = alphabet.filter({ $0.key != letterA.key }).randomElement() {
