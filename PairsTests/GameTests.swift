@@ -63,4 +63,19 @@ class GameTests: XCTestCase {
 		}
 	}
 
+	func testGame_LowerLower_IsPairReturnsFalse() {
+		// Arrange
+		if let letterA = alphabet.randomElement(),
+			 let letterB = alphabet.filter({ $0.key != letterA.key }).randomElement() {
+			let lowerA = letterA.value.lower
+			let lowerB = letterB.value.lower
+
+			// Act
+			let result = sut.isPair(lowerA, lowerB)
+
+			// Assert
+			XCTAssertFalse(result, "isPair should return FALSE for the pair (\(lowerA), \(lowerB)) but returned TRUE")
+		}
+	}
+
 }
