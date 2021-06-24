@@ -9,27 +9,30 @@ import XCTest
 @testable import Pairs
 
 class GameTests: XCTestCase {
-	
+
+	var sut: Game!
+	var alphabet: Alphabet!
+
 	override func setUpWithError() throws {
-		// Put setup code here. This method is called before the invocation of each test method in the class.
+		sut = Game()
+		alphabet = sut.greek
 	}
-	
+
 	override func tearDownWithError() throws {
-		// Put teardown code here. This method is called after the invocation of each test method in the class.
+		sut = nil
+		alphabet = nil
 	}
-	
+
 	func testGame_PairsCount_EqualsAlphabetCountTimesTwo() throws {
 		// Arrange
-		let sut = Game()
-		let greek = sut.greek
 		let pairs = sut.pairs
-		
+
 		// Act
-		let expectedLength = greek.count * 2
+		let expectedLength = alphabet.count * 2
 		let pairsCount = pairs.count
-		
+
 		// Assert
 		XCTAssertTrue(pairsCount == expectedLength, "Length of pairs should be \(expectedLength), but is \(pairsCount)" )
 	}
-	
+
 }
