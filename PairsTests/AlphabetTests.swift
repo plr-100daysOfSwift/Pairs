@@ -13,17 +13,21 @@ class AlphabetTests: XCTestCase {
 	var storyboard: UIStoryboard!
 	var sut: ViewController!
 	var greek: Alphabet!
+	var game: Game!
 
 	override func setUpWithError() throws {
 		storyboard = UIStoryboard(name: "Main", bundle: nil)
 		sut = storyboard.instantiateViewController(identifier: "ViewController") as ViewController
-		greek = sut.greek
+		sut.loadViewIfNeeded()
+		game = sut.game
+		greek = game.greek
 	}
 
 	override func tearDownWithError() throws {
 		storyboard = nil
 		sut = nil
 		greek = nil
+		game = nil
 	}
 
 	func testAlphabet_WhenNameIsAlpha_UppercaseIsΑ() throws {
