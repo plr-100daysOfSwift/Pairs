@@ -35,4 +35,17 @@ class GameTests: XCTestCase {
 		XCTAssertTrue(pairsCount == expectedLength, "Length of pairs should be \(expectedLength), but is \(pairsCount)" )
 	}
 
+	func testGame_LetterUpperLower_IsPairReturnsTrue() {
+		// Arrange
+		if let letter = alphabet.randomElement()?.value {
+			let upper = letter.upper
+			let lower = letter.lower
+			// Act
+			let result = sut.isPair(upper, lower)
+
+			// Assert
+			XCTAssertTrue(result, "isPair should return TRUE for the pair (\(upper), \(lower)) but returned FALSE")
+		}
+	}
+
 }

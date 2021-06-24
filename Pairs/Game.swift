@@ -50,4 +50,9 @@ struct Game {
 		}
 		return pairs
 	}
+
+	func isPair(_ letterA: Character, _ letterB: Character) -> Bool {
+		return pairs[letterA] == letterB
+	}
+
 }
