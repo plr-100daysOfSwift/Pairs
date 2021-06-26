@@ -95,34 +95,52 @@ class ViewController: UIViewController {
 		}
 	}
 
-	func testPair() {
-		if let characterA = buttonA?.titleLabel?.text,
-			 let characterB = buttonB?.titleLabel?.text {
-			let result = game?.isPair(Character(characterA), Character(characterB))
-			switch  result {
-			case true:
-				// disable the two buttons
-				DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
-					self?.buttonA?.isEnabled = false
-					self?.buttonB?.isEnabled = false
-					self?.buttonA?.backgroundColor = .green
-					self?.buttonB?.backgroundColor = .green
-					self?.buttonA = nil
-					self?.buttonB = nil
-				}
-			case false:
-				// hide the two characters
-				DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
-					self?.buttonA?.titleLabel?.alpha = 0
-					self?.buttonB?.titleLabel?.alpha = 0
-					self?.buttonA = nil
-					self?.buttonB = nil
-				}
-			default:
-				fatalError("Unknown boolean case encountered.")
+	func testPair(a: String?, b: String?) {
+		guard let indexA = buttonA,
+					let indexB = buttonB,
+					let a = a,
+					let b = b else { return }
+
+		let result = game?.isPair(a, b)
+
+		switch  result {
+		case true:
+			// disable the two buttons
+			DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+				self?.activeCards.remove(at: indexA)
+				self?.activeCards.remove(at: indexB)
+				self?.cards[indexA].isEnabled = false
+				self?.cards[indexB].isEnabled = false
+
+				self?.cards[indexA].setTitleColor(.gray, for: .disabled)
+				self?.cards[indexB].setTitleColor(.gray, for: .disabled)
+				self?.cards[indexA].backgroundColor = .green
+				self?.cards[indexB].backgroundColor = .green
+				self?.buttonA = nil
+				self?.buttonB = nil
+
+				// enable user interaction
+				self?.enableCards()
 			}
+		case false:
+			// hide the two characters
+			DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+				self?.cards[indexA].titleLabel?.alpha = 0
+				self?.cards[indexB].titleLabel?.alpha = 0
+				self?.buttonA = nil
+				self?.buttonB = nil
+
+				// enable user interaction
+				self?.enableCards()
+			}
+		default:
+			fatalError("Unknown boolean case encountered.")
 		}
 	}
 
 }
+
+
+
+
 
