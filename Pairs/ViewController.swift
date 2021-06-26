@@ -14,8 +14,8 @@ class ViewController: UIViewController {
 	var cards = [UIButton]()
 	var activeCards = [UIButton]()
 
-	var buttonA: Int?
-	var buttonB: Int?
+	var buttonA: Array<UIButton>.Index?
+	var buttonB: Array<UIButton>.Index?
 
 	override func loadView() {
 		super.loadView()
@@ -50,7 +50,6 @@ class ViewController: UIViewController {
 			for col in 0 ..< cols {
 				let letterButton = UIButton(type: .system)
 				letterButton.titleLabel?.font = UIFont.systemFont(ofSize: 48)
-				letterButton.setTitle("A", for: .normal)
 				letterButton.setTitleColor(.clear, for: .disabled)
 				letterButton.setTitleColor(.clear, for: .normal)
 				letterButton.layer.borderWidth = 0.5
