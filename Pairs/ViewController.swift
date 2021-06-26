@@ -20,6 +20,7 @@ class ViewController: UIViewController {
 	override func loadView() {
 		super.loadView()
 		let buttonsView = UIView()
+		buttonsView.backgroundColor = .green
 		buttonsView.translatesAutoresizingMaskIntoConstraints = false
 		view.addSubview(buttonsView)
 
@@ -49,6 +50,7 @@ class ViewController: UIViewController {
 		for row in 0 ..< rows {
 			for col in 0 ..< cols {
 				let letterButton = UIButton(type: .system)
+				letterButton.backgroundColor = .white
 				letterButton.titleLabel?.font = UIFont.systemFont(ofSize: 48)
 				letterButton.setTitleColor(.clear, for: .disabled)
 				letterButton.setTitleColor(.clear, for: .normal)
