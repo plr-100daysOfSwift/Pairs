@@ -80,19 +80,22 @@ class ViewController: UIViewController {
 		sender.titleLabel?.alpha = 1
 
 		// save the selection
-		// TODO: Why does buttonB need to be Int?
-		if let buttonA = buttonA,
-			 let buttonB: Int = cards.firstIndex(of: sender) {
+		// TODO: Why does index2 need to be Int?
+		if let index1 = buttonA,
+			 let index2 = cards.firstIndex(of: sender) {
 
-			guard sender != cards[buttonA]  else { return }
-			self.buttonB = buttonB
+			guard sender != cards[index1]  else { return }
+			guard self.buttonB == nil else { return }
+			
+			self.buttonB = index2
 
 			// disable user interaction
 			disableCards()
 
 			// test the pair
-			let cardA = cards[buttonA]
-			let cardB = cards[buttonB]
+			let cardA = cards[index1]
+			let cardB = cards[index2]
+
 			testPair(a: cardA.title(for: .normal), b: cardB.title(for: .normal))
 		} else {
 			buttonA = cards.firstIndex(of: sender)
