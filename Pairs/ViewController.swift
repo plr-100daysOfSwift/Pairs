@@ -91,5 +91,35 @@ class ViewController: UIViewController {
 			cards[index].setTitle(String(letter), for: .normal)
 		}
 	}
+
+	func testPair() {
+		if let characterA = buttonA?.titleLabel?.text,
+			 let characterB = buttonB?.titleLabel?.text {
+			let result = game?.isPair(Character(characterA), Character(characterB))
+			switch  result {
+			case true:
+				// disable the two buttons
+				DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+					self?.buttonA?.isEnabled = false
+					self?.buttonB?.isEnabled = false
+					self?.buttonA?.backgroundColor = .green
+					self?.buttonB?.backgroundColor = .green
+					self?.buttonA = nil
+					self?.buttonB = nil
+				}
+			case false:
+				// hide the two characters
+				DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+					self?.buttonA?.titleLabel?.alpha = 0
+					self?.buttonB?.titleLabel?.alpha = 0
+					self?.buttonA = nil
+					self?.buttonB = nil
+				}
+			default:
+				fatalError("Unknown boolean case encountered.")
+			}
+		}
+	}
+
 }
 
