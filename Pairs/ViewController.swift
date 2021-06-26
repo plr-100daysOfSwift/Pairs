@@ -51,7 +51,8 @@ class ViewController: UIViewController {
 				let letterButton = UIButton(type: .system)
 				letterButton.titleLabel?.font = UIFont.systemFont(ofSize: 48)
 				letterButton.setTitle("A", for: .normal)
-				letterButton.titleLabel?.alpha = 0
+				letterButton.setTitleColor(.clear, for: .disabled)
+				letterButton.setTitleColor(.clear, for: .normal)
 				letterButton.layer.borderWidth = 0.5
 				letterButton.layer.borderColor = UIColor.gray.cgColor
 				let frame = CGRect(x: CGFloat(col) * buttonWidth, y: CGFloat(row) * buttonHeight, width: buttonWidth, height: buttonHeight)
@@ -74,7 +75,7 @@ class ViewController: UIViewController {
 
 	@IBAction func buttonTapped(_ sender: UIButton) {
 		// reveal the character
-		sender.titleLabel?.alpha = 1
+		sender.setTitleColor(.black, for: .normal)
 
 		// save the selection
 		if buttonA == nil {
