@@ -133,17 +133,17 @@ class ViewController: UIViewController {
 
 		switch  result {
 		case true:
-			// disable the two buttons
+			// remove the two buttons
 			DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
-				self?.activeCards.remove(at: indexA)
-				self?.activeCards.remove(at: indexB)
-				self?.cards[indexA].isEnabled = false
-				self?.cards[indexB].isEnabled = false
+				self?.activeCards.remove(at: activeA)
+				self?.activeCards.remove(at: activeB)
 
-				self?.cards[indexA].setTitleColor(.gray, for: .disabled)
-				self?.cards[indexB].setTitleColor(.gray, for: .disabled)
-				self?.cards[indexA].backgroundColor = .green
-				self?.cards[indexB].backgroundColor = .green
+				self?.cards[indexA].isHidden = true
+				self?.cards.remove(at: indexA)
+
+				self?.cards[indexB].isHidden = true
+				self?.cards.remove(at: indexB)
+
 				self?.buttonA = nil
 				self?.buttonB = nil
 
