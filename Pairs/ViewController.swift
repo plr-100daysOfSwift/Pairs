@@ -77,12 +77,22 @@ class ViewController: UIViewController {
 		sender.setTitleColor(.black, for: .normal)
 
 		// save the selection
-		if buttonA == nil {
-			buttonA = sender
-		} else {
-			buttonB = sender
+		// TODO: Why does buttonB need to be Int?
+		if let buttonA = buttonA,
+			 let buttonB: Int = cards.firstIndex(of: sender) {
+
+			guard sender != cards[buttonA]  else { return }
+			self.buttonB = buttonB
+
+			// disable user interaction
+			disableCards()
+
 			// test the pair
-			testPair()
+			let cardA = cards[buttonA]
+			let cardB = cards[buttonB]
+			testPair(a: cardA.title(for: .normal), b: cardB.title(for: .normal))
+		} else {
+			buttonA = cards.firstIndex(of: sender)
 		}
 	}
 
