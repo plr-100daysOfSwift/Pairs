@@ -127,9 +127,12 @@ class ViewController: UIViewController {
 		guard let indexA = buttonA,
 					let indexB = buttonB,
 					let a = a,
-					let b = b else { return }
+					let b = b,
+					let activeA = activeCards.firstIndex(where: {$0 == cards[indexA]}),
+					let activeB = activeCards.firstIndex(where: {$0 == cards[indexB]}) else { return }
 
 		let result = game?.isPair(a, b)
+
 
 		switch  result {
 		case true:
