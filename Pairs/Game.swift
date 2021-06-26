@@ -17,7 +17,6 @@ struct Game {
 		"gamma": ("Γ", "γ"),
 		"delta": ("Δ", "δ"),
 		"epsilon": ("Ε", "ε"),
-		"digamma": ("Ϝ", "ϝ"),
 		"zeta": ("Ζ", "ζ"),
 		"eta": ("Η", "η"),
 		"theta": ("Θ", "θ"),
@@ -29,8 +28,6 @@ struct Game {
 		"xi": ("Ξ", "ξ"),
 		"omicron": ("Ο", "ο"),
 		"pi": ("Π", "π"),
-		"san": ("Ϻ", "ϻ"),
-		"qoppa": ("Ϙ", "ϙ"),
 		"rho": ("Ρ", "ρ"),
 		"sigma": ("Σ", "σ"),
 		"tau": ("Τ", "τ"),
@@ -39,7 +36,6 @@ struct Game {
 		"chi": ("Χ", "χ"),
 		"psi": ("Ψ", "ψ"),
 		"omega": ("Ω", "ω"),
-		"sampi": ("Ϡ", "ϡ"),
 	]
 
 	var pairs: [Character : Character] {
