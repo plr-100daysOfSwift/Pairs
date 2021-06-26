@@ -14,8 +14,8 @@ class ViewController: UIViewController {
 	var cards = [UIButton]()
 	var activeCards = [UIButton]()
 
-	var buttonA: UIButton?
-	var buttonB: UIButton?
+	var buttonA: Int?
+	var buttonB: Int?
 
 	override func loadView() {
 		super.loadView()
