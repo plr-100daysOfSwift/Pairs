@@ -95,6 +95,23 @@ class ViewController: UIViewController {
 		}
 	}
 
+	func enableCards() {
+		activeCards.forEach { button in
+			button.titleLabel?.alpha = 0
+			button.setTitleColor(.clear, for: .normal)
+			button.isEnabled = true
+		}
+	}
+
+	func disableCards() {
+		for (index, button) in activeCards.enumerated() {
+			// disable the current selection
+			guard index != buttonA,
+						index != buttonB else { continue }
+			button.isEnabled = false
+		}
+	}
+
 	func testPair(a: String?, b: String?) {
 		guard let indexA = buttonA,
 					let indexB = buttonB,
