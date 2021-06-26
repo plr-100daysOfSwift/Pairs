@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 	var game: Game?
 
 	var cards = [UIButton]()
+	var activeCards = [UIButton]()
 
 	var buttonA: UIButton?
 	var buttonB: UIButton?
@@ -57,6 +58,7 @@ class ViewController: UIViewController {
 				letterButton.frame = frame
 				letterButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
 				cards.append(letterButton)
+				activeCards.append(letterButton)
 				buttonsView.addSubview(letterButton)
 			}
 		}
