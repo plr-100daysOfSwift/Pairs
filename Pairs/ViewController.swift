@@ -88,7 +88,7 @@ class ViewController: UIViewController {
 		game = Game()
 		guard let letters = game?.pairs.keys.shuffled() else { return }
 		for (index, letter) in letters.enumerated() {
-			cards[index].setTitle(String(letter), for: .normal)
+			cards[index].setTitle(letter, for: .normal)
 		}
 	}
 

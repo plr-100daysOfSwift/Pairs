@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias Alphabet = [String: (upper: Character, lower: Character)]
+typealias Alphabet = [String: (upper: String, lower: String)]
 
 struct Game {
 
@@ -38,16 +38,16 @@ struct Game {
 		"omega": ("Ω", "ω"),
 	]
 
-	var pairs: [Character : Character] {
-		var pairs = [Character : Character]()
-		greek.forEach { (key: String, value: (upper: Character, lower: Character)) in
+	var pairs: [String : String] {
+		var pairs = [String : String]()
+		greek.forEach { (key: String, value: (upper: String, lower: String)) in
 			pairs[value.upper] = value.lower
 			pairs[value.lower] = value.upper
 		}
 		return pairs
 	}
 
-	func isPair(_ letterA: Character, _ letterB: Character) -> Bool {
+	func isPair(_ letterA: String, _ letterB: String) -> Bool {
 		return pairs[letterA] == letterB
 	}
 
