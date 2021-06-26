@@ -61,11 +61,19 @@ class ViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		newGame()
- 	}
 
-	fileprivate func newGame() {
-		game = Game() 
+		loadGame()
+
+	}
+
+	}
+
+	func loadGame() {
+		game = Game()
+		guard let letters = game?.pairs.keys.shuffled() else { return }
+		for (index, letter) in letters.enumerated() {
+			cards[index].setTitle(String(letter), for: .normal)
+		}
 	}
 }
 
