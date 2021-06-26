@@ -12,6 +12,10 @@ class ViewController: UIViewController {
 	var game: Game?
 
 	var cards = [UIButton]()
+
+	var buttonA: UIButton?
+	var buttonB: UIButton?
+
 	override func loadView() {
 		super.loadView()
 		let buttonsView = UIView()
@@ -66,6 +70,18 @@ class ViewController: UIViewController {
 
 	}
 
+	@IBAction func buttonTapped(_ sender: UIButton) {
+		// reveal the character
+		sender.titleLabel?.alpha = 1
+
+		// save the selection
+		if buttonA == nil {
+			buttonA = sender
+		} else {
+			buttonB = sender
+			// test the pair
+			testPair()
+		}
 	}
 
 	func loadGame() {
