@@ -77,6 +77,7 @@ class ViewController: UIViewController {
 	@IBAction func buttonTapped(_ sender: UIButton) {
 		// reveal the character
 		sender.setTitleColor(.black, for: .normal)
+		sender.titleLabel?.alpha = 1
 
 		// save the selection
 		// TODO: Why does buttonB need to be Int?
