@@ -49,15 +49,8 @@ class ViewController: UIViewController {
 
 		for row in 0 ..< rows {
 			for col in 0 ..< cols {
-				let letterButton = UIButton(type: .system)
-				letterButton.backgroundColor = .white
-				letterButton.titleLabel?.font = UIFont.systemFont(ofSize: 48)
-				letterButton.setTitleColor(.clear, for: .disabled)
-				letterButton.setTitleColor(.clear, for: .normal)
-				letterButton.layer.borderWidth = 0.5
-				letterButton.layer.borderColor = UIColor.gray.cgColor
 				let frame = CGRect(x: CGFloat(col) * buttonWidth, y: CGFloat(row) * buttonHeight, width: buttonWidth, height: buttonHeight)
-				letterButton.frame = frame
+				let letterButton = Card(frame: frame)
 				letterButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
 				cards.append(letterButton)
 				activeCards.append(letterButton)
@@ -86,7 +79,7 @@ class ViewController: UIViewController {
 
 			guard sender != cards[index1]  else { return }
 			guard self.buttonB == nil else { return }
-			
+
 			self.buttonB = index2
 
 			// disable user interaction
