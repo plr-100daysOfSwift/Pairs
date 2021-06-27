@@ -16,6 +16,7 @@ class Card: UIButton {
 		setTitleColor(.clear, for: .normal)
 		setTitleColor(.clear, for: .disabled)
 		titleLabel?.font = UIFont.systemFont(ofSize: 48)
+		
 	}
 
 	required init?(coder: NSCoder) {

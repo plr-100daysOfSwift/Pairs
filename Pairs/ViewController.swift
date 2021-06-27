@@ -67,9 +67,6 @@ class ViewController: UIViewController {
 	}
 
 	@IBAction func buttonTapped(_ sender: UIButton) {
-		// reveal the character
-		sender.setTitleColor(.black, for: .normal)
-		sender.titleLabel?.alpha = 1
 
 		// save the selection
 		// TODO: Why does index2 need to be Int?
@@ -79,6 +76,7 @@ class ViewController: UIViewController {
 			guard sender != cards[index1]  else { return }
 			guard self.buttonB == nil else { return }
 
+			revealText()
 			self.buttonB = index2
 
 			// disable user interaction
@@ -87,16 +85,21 @@ class ViewController: UIViewController {
 			// test the pair
 			let cardA = cards[index1]
 			let cardB = cards[index2]
-
 			testPair(a: cardA.title(for: .normal), b: cardB.title(for: .normal))
 		} else {
+			revealText()
 			buttonA = cards.firstIndex(of: sender)
+		}
+
+		func revealText() {
+			sender.setTitleColor(.black, for: .normal)
+			sender.titleLabel?.alpha = 1
 		}
 	}
 
 	func loadGame() {
 		game = Game()
-		guard let letters = game?.pairs.keys.shuffled() else { return }
+		guard let letters = game?.pairs.keys.sorted() else { return }
 		for (index, letter) in letters.enumerated() {
 			cards[index].setTitle(letter, for: .normal)
 		}
