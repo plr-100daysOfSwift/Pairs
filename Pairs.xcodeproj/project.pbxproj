@@ -15,6 +15,7 @@
 		DA27C0972683EC1900E1F90A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA27C0952683EC1900E1F90A /* LaunchScreen.storyboard */; };
 		DA27C0AD2683EC1900E1F90A /* PairsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA27C0AC2683EC1900E1F90A /* PairsUITests.swift */; };
 		DA27C0BB2683EC3300E1F90A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DA27C0BA2683EC3300E1F90A /* README.md */; };
+		DAA1E2DC268801FA00CDD764 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA1E2DB268801FA00CDD764 /* Card.swift */; };
 		DAD70DFC2683F65B00915F19 /* AlphabetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD70DFB2683F65B00915F19 /* AlphabetTests.swift */; };
 		DAD70DFE26840EBC00915F19 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD70DFD26840EBC00915F19 /* Game.swift */; };
 		DAD70E002684125500915F19 /* GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD70DFF2684125500915F19 /* GameTests.swift */; };
@@ -52,6 +53,8 @@
 		DA27C0AC2683EC1900E1F90A /* PairsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsUITests.swift; sourceTree = "<group>"; };
 		DA27C0AE2683EC1900E1F90A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA27C0BA2683EC3300E1F90A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		DAA1E2DB268801FA00CDD764 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		DAA1E2DD2688164F00CDD764 /* Button.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Button.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DAD70DFB2683F65B00915F19 /* AlphabetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetTests.swift; sourceTree = "<group>"; };
 		DAD70DFD26840EBC00915F19 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		DAD70DFF2684125500915F19 /* GameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTests.swift; sourceTree = "<group>"; };
@@ -116,6 +119,7 @@
 				DA27C0952683EC1900E1F90A /* LaunchScreen.storyboard */,
 				DA27C0982683EC1900E1F90A /* Info.plist */,
 				DAD70DFD26840EBC00915F19 /* Game.swift */,
+				DAA1E2DB268801FA00CDD764 /* Card.swift */,
 			);
 			path = Pairs;
 			sourceTree = "<group>";
@@ -143,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				DAD70E0326841EFB00915F19 /* Game.playground */,
+				DAA1E2DD2688164F00CDD764 /* Button.playground */,
 			);
 			path = Playgrounds;
 			sourceTree = "<group>";
@@ -281,6 +286,7 @@
 			files = (
 				DA27C08F2683EC1500E1F90A /* ViewController.swift in Sources */,
 				DA27C08B2683EC1500E1F90A /* AppDelegate.swift in Sources */,
+				DAA1E2DC268801FA00CDD764 /* Card.swift in Sources */,
 				DA27C08D2683EC1500E1F90A /* SceneDelegate.swift in Sources */,
 				DAD70DFE26840EBC00915F19 /* Game.swift in Sources */,
 			);
