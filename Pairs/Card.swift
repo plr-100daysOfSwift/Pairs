@@ -11,7 +11,6 @@ class Card: UIButton {
 
 	override init(frame: CGRect) {
 		super.init(frame: frame)
-		backgroundColor = .white
 		layer.borderWidth = 0.5
 		layer.borderColor = UIColor.gray.cgColor
 		setTitleColor(.clear, for: .normal)
