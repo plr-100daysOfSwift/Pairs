@@ -128,40 +128,37 @@ class ViewController: UIViewController {
 					let a = a,
 					let b = b else { return }
 
+		let completion = {
+			self.buttonA = nil
+			self.buttonB = nil
+			// enable user interaction
+			self.enableCards()
+		}
+
 		let result = game?.isPair(a, b)
 
 		switch  result {
 		case true:
 			let activeIndices = [indexA, indexB]
 			let activeIndicesSorted = activeIndices.sorted(by: >)
-			// remove the two buttons
-			DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+			// disable the two characters
+			UIView.animate(withDuration: 1.0, delay: 1.5, options: []) {
 				for index in activeIndicesSorted {
-					self?.cards[index].isEnabled = false
-					self?.cards[index].setTitleColor(.gray, for: .disabled)
-					self?.cards[index].backgroundColor = .green
-					self?.activeCards.remove(at: index)
-					self?.cards.remove(at: index)
+					self.cards[index].isEnabled = false
+					UIButton.animate(withDuration: 1.0) {
+						self.cards[index].setTitleColor(.gray, for: .disabled)
+						self.cards[index].backgroundColor = .green
+					}
+					self.activeCards.remove(at: index)
+					self.cards.remove(at: index)
 				}
-
-				self?.buttonA = nil
-				self?.buttonB = nil
-
-				// enable user interaction
-				self?.enableCards()
-			}
+			} completion: {_ in completion()}
 		case false:
 			// hide the two characters
 			UIView.animate(withDuration: 2.0, delay: 1.0, options: []) {
 				self.cards[indexA].titleLabel?.alpha = 0
 				self.cards[indexB].titleLabel?.alpha = 0
-			} completion: { [weak self] _ in
-				self?.buttonA = nil
-				self?.buttonB = nil
-
-				// enable user interaction
-				self?.enableCards()
-			}
+			} completion: { _ in completion()}
 		default:
 			fatalError("Unknown boolean case encountered.")
 		}
