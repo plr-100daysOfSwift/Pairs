@@ -99,7 +99,7 @@ class ViewController: UIViewController {
 
 	func loadGame() {
 		game = Game()
-		guard let letters = game?.pairs.keys.sorted() else { return }
+		guard let letters = game?.pairs.keys.shuffled() else { return }
 		for (index, letter) in letters.enumerated() {
 			cards[index].setTitle(letter, for: .normal)
 		}
