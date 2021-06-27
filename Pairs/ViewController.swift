@@ -30,7 +30,7 @@ class ViewController: UIViewController {
 		title.textAlignment = .center
 		view.addSubview(title)
 
-		let buttonWidth: CGFloat = 135
+		let buttonWidth: CGFloat = 120
 		let buttonHeight: CGFloat = 90
 		let rows = 6
 		let cols = 8
