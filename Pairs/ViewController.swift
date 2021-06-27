@@ -124,25 +124,21 @@ class ViewController: UIViewController {
 		guard let indexA = buttonA,
 					let indexB = buttonB,
 					let a = a,
-					let b = b,
-					let activeA = activeCards.firstIndex(where: {$0 == cards[indexA]}),
-					let activeB = activeCards.firstIndex(where: {$0 == cards[indexB]}) else { return }
+					let b = b else { return }
 
 		let result = game?.isPair(a, b)
 
-
 		switch  result {
 		case true:
+			let activeIndices = [indexA, indexB]
+			let activeIndicesSorted = activeIndices.sorted(by: >)
 			// remove the two buttons
 			DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
-				self?.activeCards.remove(at: activeA)
-				self?.activeCards.remove(at: activeB)
-
-				self?.cards[indexA].isHidden = true
-				self?.cards.remove(at: indexA)
-
-				self?.cards[indexB].isHidden = true
-				self?.cards.remove(at: indexB)
+				for index in activeIndicesSorted {
+					self?.activeCards.remove(at: index)
+					self?.cards[index].isHidden = true
+					self?.cards.remove(at: index)
+				}
 
 				self?.buttonA = nil
 				self?.buttonB = nil
