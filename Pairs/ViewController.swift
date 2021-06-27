@@ -20,7 +20,6 @@ class ViewController: UIViewController {
 	override func loadView() {
 		super.loadView()
 		let buttonsView = UIView()
-		buttonsView.backgroundColor = .green
 		buttonsView.translatesAutoresizingMaskIntoConstraints = false
 		view.addSubview(buttonsView)
 
@@ -135,8 +134,10 @@ class ViewController: UIViewController {
 			// remove the two buttons
 			DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
 				for index in activeIndicesSorted {
+					self?.cards[index].isEnabled = false
+					self?.cards[index].setTitleColor(.gray, for: .disabled)
+					self?.cards[index].backgroundColor = .green
 					self?.activeCards.remove(at: index)
-					self?.cards[index].isHidden = true
 					self?.cards.remove(at: index)
 				}
 
