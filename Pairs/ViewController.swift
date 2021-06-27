@@ -152,9 +152,10 @@ class ViewController: UIViewController {
 			}
 		case false:
 			// hide the two characters
-			DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
-				self?.cards[indexA].titleLabel?.alpha = 0
-				self?.cards[indexB].titleLabel?.alpha = 0
+			UIView.animate(withDuration: 2.0, delay: 1.0, options: []) {
+				self.cards[indexA].titleLabel?.alpha = 0
+				self.cards[indexB].titleLabel?.alpha = 0
+			} completion: { [weak self] _ in
 				self?.buttonA = nil
 				self?.buttonB = nil
 
