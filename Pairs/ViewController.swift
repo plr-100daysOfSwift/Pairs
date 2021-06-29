@@ -43,10 +43,17 @@ class ViewController: UIViewController {
 
 		// create buttons
 
+		var fillRow: Bool = false
+		var fillCol: Bool = false
 		for row in 0 ..< rows {
+			fillRow.toggle()
 			for col in 0 ..< cols {
+				fillCol.toggle()
 				let frame = CGRect(x: CGFloat(col) * buttonWidth, y: CGFloat(row) * buttonHeight, width: buttonWidth, height: buttonHeight)
+				let isFilled = fillRow == fillCol ? true : false
+
 				let letterButton = Card(frame: frame)
+				letterButton.isFilled = isFilled
 				letterButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
 				cards.append(letterButton)
 				activeCards.append(letterButton)
