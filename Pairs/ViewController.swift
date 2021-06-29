@@ -50,9 +50,11 @@ class ViewController: UIViewController {
 			for col in 0 ..< cols {
 				fillCol.toggle()
 				let frame = CGRect(x: CGFloat(col) * buttonWidth, y: CGFloat(row) * buttonHeight, width: buttonWidth, height: buttonHeight)
+				let tag = row * cols + col
 				let isFilled = fillRow == fillCol ? true : false
 
 				let letterButton = Card(frame: frame)
+				letterButton.tag = tag
 				letterButton.isFilled = isFilled
 				letterButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
 				cards.append(letterButton)
