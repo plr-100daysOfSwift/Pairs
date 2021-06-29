@@ -9,6 +9,13 @@ import UIKit
 
 class Card: UIButton {
 
+	var isFilled: Bool = false {
+		didSet {
+			let lightGray = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.1)
+			backgroundColor = isFilled ? lightGray : .clear
+		}
+	}
+
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		layer.borderWidth = 0.5
@@ -16,7 +23,7 @@ class Card: UIButton {
 		setTitleColor(.clear, for: .normal)
 		setTitleColor(.clear, for: .disabled)
 		titleLabel?.font = UIFont.systemFont(ofSize: 48)
-		
+		isFilled = false
 	}
 
 	required init?(coder: NSCoder) {
