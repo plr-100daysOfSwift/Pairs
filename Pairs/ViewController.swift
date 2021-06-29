@@ -19,15 +19,12 @@ class ViewController: UIViewController {
 
 	override func loadView() {
 		super.loadView()
+		
 		let buttonsView = UIView()
 		buttonsView.translatesAutoresizingMaskIntoConstraints = false
 		view.addSubview(buttonsView)
 
-		let title = UILabel()
-		title.text = "The Greek Alphabet"
-		title.font = UIFont.boldSystemFont(ofSize: 48)
-		title.translatesAutoresizingMaskIntoConstraints = false
-		title.textAlignment = .center
+		let title = TitleView()
 		view.addSubview(title)
 
 		let buttonWidth: CGFloat = 120
